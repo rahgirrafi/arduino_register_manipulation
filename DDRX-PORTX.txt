@@ -1,0 +1,9 @@
+DDRX-> Port X Data Direction Register - read/write; // pinMode equivalent
+PORTX -> Port X Data Register - read/write; // digitalRead/Write equivalent
+PINX -> Port X input pin register - read
+
+DDRD = B11111110;  // sets Arduino pins 1 to 7 as outputs, pin 0 as input
+DDRD = DDRD | B11111100;  // this is safer as it sets pins 2 to 7 as outputs
+                          // without changing the value of pins 0 & 1, which are RX & TX
+PORTD = B10101000; // sets digital pins 7,5,3 HIGH
+

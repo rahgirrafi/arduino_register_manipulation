@@ -1,18 +1,18 @@
 #include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  Serial.begin(9600);
+  //pinMode(9,OUTPUT);
+  DDRB = B00000010;
+  PORTB = B00000000;
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  //digitalWrite(9, HIGH);
+  PORTB = PORTB | B00000010;
+  delay(500);
+  //digitalWrite(9, LOW);
+  PORTB = ~PORTB & B00000000;
+  delay(500);
 }
