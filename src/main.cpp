@@ -13,6 +13,6 @@ void loop() {
   PORTB = PORTB | B00000010;
   delay(500);
   //digitalWrite(9, LOW);
-  PORTB = ~PORTB & B00000000;
+  PORTB =  ~(PORTB ^ B00000000);
   delay(500);
 }
